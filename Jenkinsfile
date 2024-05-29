@@ -7,8 +7,8 @@ pipeline {
     }
 
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('ncplawskey')
-        AWS_SECRET_ACCESS_KEY = credentials('ncplawssecretkey')
+        AWS_ACCESS_KEY_ID     = credentials('she')
+        AWS_SECRET_ACCESS_KEY = credentials('sheaccess')
         AWS_DEFAULT_REGION    = 'ap-south-1'
     }
 
@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 //git branch: 'main', url: 'https://github.com/CodeSagarOfficial/jenkins-scripts.git'
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rajcocvs/jenkinterraform.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/she0407/jenkinterraform.git']])
             }
         }
         stage('Terraform init') {
